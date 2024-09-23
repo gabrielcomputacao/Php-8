@@ -1,0 +1,24 @@
+
+
+-- rodar php, entrar na pasta do PHP/NTS (na minha maquina) e rodar
+
+C:\PHP\NTS
+
+.\php-cgi.exe -b 127.0.0.1:9000 (qualquer porta que nao esteja sendo usada)
+cgi.exe é o interpretador de php, para interpretar uma pagina php precisa do cgi
+
+
+-- rodar nginx, entrar na pasta do NGINX e rodar esse comando (executar o exe)
+C:\NGINX
+
+.\nginx.exe
+
+ -- encerrar nginx, encerra todos os processos
+
+taskkill /F /IM nginx.exe
+
+-- verificar processos nginx rodando
+
+tasklist | findstr nginx
+
+tasklist /FI "IMAGENAME eq nginx.exe"
