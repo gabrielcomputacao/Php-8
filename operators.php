@@ -46,9 +46,9 @@ $valor2 = 10;
 
 
     
-    //  Operadores de execução
     echo 'test<br/>';
     
+    //  Operadores de execução
     $result = `dir`;
 
     $oem = sapi_windows_cp_get('oem');
@@ -64,9 +64,10 @@ $valor2 = 10;
     
     // Operadores de controle de erro -- @ (evita que o erro seja mostrado)
     
-        $resultado = file('testando');
+        
+        // $resultado = file('testando');
     
-        $resultado = @file('testando') or die ('deu erro') ;
+        // $resultado = @file('testando') or die ('deu erro') ;
 
     // Operators decrement/increment
 
@@ -81,5 +82,60 @@ $valor2 = 10;
     echo $depois++ * 10;
 
     echo $depois;
+
+    // Operadores string
+
+    $textoPequeno = "gabriel" . $depois . "  " . "fim";
+    echo $textoPequeno;
+
+    $textoMedio = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit?';
+
+    $textoMedio .= '. Animi aspernatur possimus assumenda ';
+
+    $textoMedio .= 'nisi hic voluptatem, quidem libero, quam';
+
+    echo '<br />';
+
+    echo $textoMedio;
+
+    $textoGrande = <<<HCODE
+    caso precise formatar usar a tag pre <pre>
+    tudo que eu colocar para baixo desse comando vira texto 
+    independente do que for
+    tambem le variavek $textoMedio
+    para finalizar nao pode ter indentação
+    <pre/>
+HCODE;
+
+    echo '<br />';
+    echo $textoGrande;
+
+
+    // Operadores de Array
+$comidas = ['sal', 'pimenta', 'pao'];
+$bixos = ['cachorro', 'gato' , 'peixe', 'macaco', 'elefante'];
+
+// cada posicao foi declarada dentro do array no caso, 2 => 200, na posicao 2 vai ter 200
+$arrayMisturado = [ 2 => 200, 1 => 100, 0 => 50 ];
+
+var_dump($arrayMisturado);
+var_dump($arrayMisturado[1]);
+
+$juncaoArray = $comidas + $bixos;
+
+// erro ao tentar imprimir array  echo $juncaoArray;
+
+/* 
+    ! Tomar Cuidado!
+    ? Ao tentar fazer a juncao com o + ele sobrescreve as posicoes do segundo array com as do primeira, vindo somente
+    ? as posicoes que nao batem o index
+*/
+
+var_dump($juncaoArray);
+
+var_dump($comidas !== $bixos);
+var_dump($comidas == $bixos);
+var_dump($comidas <> $bixos);
+
 
 
