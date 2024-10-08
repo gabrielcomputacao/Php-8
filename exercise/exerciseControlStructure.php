@@ -21,5 +21,51 @@
 
 
 
+ $autorizado = true;
+ $admin = true;
+ $nome = 'gabriel';
+
+ if($admin === true && $autorizado === true){
+    echo "Área administrativa, $nome, Bem vindo!";
+ }
+
+
+ $quantidade = 2;
+ $valorUnitario = 1200.00;
+ $frete = 40.00;
+ 
+ $subtotal = $quantidade * $valorUnitario; 
+
+ if($quantidade > 3){
+    $desconto =  $subtotal * 0.1  ; 
+    $subtotal = $subtotal - $desconto;
+ }else{
+    $desconto =  $subtotal * 0.05  ; 
+    $subtotal = $subtotal - $desconto;
+ }
+
+ $subtotal += $frete;
+
+ echo '<br/>';
+
+ echo $subtotal;
+
+ echo '<br/>';
+ echo '<br/>';
+
+$cont = 1920;
+
+while ( $cont <= 2022 ) {
+    
+    $option = '<option value="$valor">$valor</option>';
+
+    if($cont == 2021){
+        echo "<option value=$cont selected=selected>$cont</option>";
+    }
+
+    $cont++;
+}
+
+echo $cont;
 
 ?>
