@@ -43,3 +43,16 @@ function somar4( $a): float{
 
 // converte o resultado para float
 var_dump( somar4(10) );
+
+// VARIAVEIS FUNCOES
+
+
+function desenhar(){
+    echo "----";
+}
+
+$e = 'desenhar';
+$e();
+
+
+
