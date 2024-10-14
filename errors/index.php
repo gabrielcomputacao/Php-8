@@ -32,4 +32,34 @@
 
     //  --------------------------
 
-    
+    // set_error_handler
+
+    set_error_handler(function ($errNumero, $errString, $errFile, $errLine){
+
+        var_dump('numero:' . $errNumero);
+        var_dump('string:' . $errString);
+        var_dump('file:' . $errFile);
+        var_dump('line:' . $errLine);
+
+    } );
+
+    //  ------------
+    //  Exception
+
+
+    echo "<br/>";
+
+    function handleException($exception){
+
+        var_dump($exception);
+    }
+
+
+    set_exception_handler('handleException');
+
+
+    //  ? precisa lançar uma exception (aquilo que ja é esperado), lança com o throw
+
+    throw new Exception('Aqui está uma exceção!');
+
+    echo "depois da exceção";
