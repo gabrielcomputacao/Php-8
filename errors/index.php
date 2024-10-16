@@ -19,7 +19,7 @@
     ini_set( "display_errors", 1 );
 
     /* 
-        ! Diferença de incluse e require
+        ! Diferença de include e require
         TODO:  o require vai dar erro fatal caso nao tenha o arquivo e para a aplicação
 
         TODO: o include ele nao da erro fatal, ele da erro de warning e nao para a aplicacao
@@ -43,10 +43,15 @@
 
     } );
 
+
+    trigger_error('Aconteceu um problema de erro');
+
     //  ------------
     //  Exception
 
 
+    echo "<br/>";
+    echo "<br/>";
     echo "<br/>";
 
     function handleException($exception){
