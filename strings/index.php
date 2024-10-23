@@ -219,7 +219,7 @@ echo str_word_count($wordLength);
 
 echo str_word_count($wordLength1);
 
-echo "\nusando funcao mb, nao pega os acentos \n";
+echo "\n usando funcao mb, nao pega os acentos \n";
 echo mb_strlen($wordLength1);
 
 echo '<br>';
@@ -280,4 +280,19 @@ echo ucwords($nomeCaseUpperAndLower) . "\n" ;
 $nomeCaseUpperAndLowerDiff = "João;henrique";
 echo ucwords($nomeCaseUpperAndLowerDiff, ';') . "\n" ;
 
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '-----------------------------------';
+echo '<br>';
+
+// TODO: substr -  dividir strings
+
+$variavelHcode = "https://hcode.com.br";
+
+
+// ? substr pega partes da string passando os index de começo até quantos index a frente ela deve cortar a string
+// ? exemplo: começa do index 8 e anda 12 vezes ate cortar , dentro da string
+echo substr( $variavelHcode, 8, 12 );
 
