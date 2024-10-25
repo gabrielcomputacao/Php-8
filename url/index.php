@@ -63,4 +63,46 @@ $arrayQuery = [
 // segundo parametro é para array numericos, no caso do exemplo é um array associativo
 echo http_build_query($arrayQuery, "_");
 
+// TODo: parse_url pega os elementos separados da url
+
+$url = "https://hcode.com.br/blog" ;
+
+var_dump( parse_url($url) );
+
+echo '<br>';
+echo '<br>';
+
+$utils = parse_url($url);
+
+echo $utils["host"]  ;
+
+$url1 = "https://joao:1223@hcode.com.br/blog?teste=1#home" ;
+
+$utils1 = parse_url($url1);
+echo '<br>';
+echo '<br>';
+
+var_dump($utils1);
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+
+// TODO: rawurldecode / rawurlencode --> Usa o padrao RFC 3986 que se tiver espaço ele coloca com %20 vai usar sempre quando encontrar um caracteres especial menos -, ~, _
+
+$msg = "João Rangel";
+
+echo rawurlencode($msg ) . "\n";
+echo rawurldecode("Jo%C3%A3o%20Rangel");
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+
+// TODO: urldecode / urlencode --> Usa o padrao RFC 3986 que se tiver espaço ele coloca com %20 vai usar sempre quando encontrar um caracteres especial menos -, ~, _
+// TODO: mais moderna que a anterior
+
+echo urlencode($msg ) . "\n";
+echo urldecode("Jo%C3%A3o+Rangel");
 
