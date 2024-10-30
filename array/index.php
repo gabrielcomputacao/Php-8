@@ -109,10 +109,25 @@ echo '<br>';
 echo '<br>';
 echo '<br>';
 
-echo "ARRAY ------------------------------";
+echo "ARRAY SEARCH------------------------------";
 
 
 echo '<br>';
 echo '<br>';
 echo '<br>';
 echo '<br>';
+
+$country = ['brasil', 'argentina', 'uruguai', 'teste' => 50];
+
+//  ? procura um dado dentro do array com a funcao in_array() retorna verdadeiro ou falso e array_search que retorna o indice
+
+var_dump( in_array('brasil', $country) );
+var_dump( array_search('brasil', $country) ); // retorna a posicao dentro do array caso tenha
+var_dump( array_search('texas', $country) ); // se nao tiver retorna false
+
+echo '<br>';
+
+var_dump( array_key_exists('teste' , $country) ); // retorna se tem uma chave dentro do array, true or false
+
+
+
