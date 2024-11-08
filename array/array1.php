@@ -99,3 +99,116 @@ echo '<br>';
 echo '<br>';
 echo '<br>';
 echo '<br>';
+
+echo "ARRAY FILTER------------------------------";
+
+echo '<br>';
+echo '<br>';
+
+$dados = [
+    [
+        "modelo" => 'Onix',
+        "ano" => 2020,
+        "preco" => 50000,
+        "fabricante" => 'gm'
+    ],
+    [
+        "modelo" => 'Cruze',
+        "ano" => 2021,
+        "preco" => 100000,
+        "fabricante" => 'gm'
+    ],
+    [
+        "modelo" => 'Palio',
+        "ano" => 1998,
+        "preco" => 7500,
+        "fabricante" => 'fiat'
+    ],
+];
+
+
+
+// ? Array filter retorna um novo array com os dados filtrados
+
+$filtered = array_filter($dados, function($item, $key){
+
+    echo $key;
+     return $item["ano"] >= 2020;
+
+}, ARRAY_FILTER_USE_BOTH );
+
+// Para usar o indice tem que colocar uma variavel especificando para usar ambos ARRAY_FILTER_USE_BOTH
+
+// => INGLES: BOTH === ambos
+
+var_dump($filtered);
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+
+echo "FOREACh------------------------------";
+
+echo '<br>';
+echo '<br>';
+
+// $key nesse caso é o indice
+foreach ($dados as $key => $carro) {
+   var_dump($key); 
+   echo "<br>";
+   echo "<br>";
+   var_dump($carro); 
+}
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+
+
+echo "ARRAY MAP------------------------------";
+
+echo '<br>';
+echo '<br>';
+
+// Nao altera o array original e retorna um array com as mudanças
+
+$newArray = array_map(function($item){
+
+    $item['preco'] = 20000;
+    return  $item;
+
+}, $dados);
+
+var_dump($newArray);
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+
+
+echo "ARRAY REDUCE------------------------------";
+
+echo '<br>';
+echo '<br>';
+
+// Nao altera o array original e retorna um array com as mudanças
+
+$notas = [200,100,50,5,5,5, 2,1];
+
+// Primeiro é o valor que vai acumulando conforme vai retornando , o segundo sao os valores do array passado
+
+$newArrayReduce = array_reduce($notas, function($acumulado, $value){
+
+    return $acumulado + $value;
+
+},0);
+
+var_dump($newArrayReduce);
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
