@@ -212,3 +212,33 @@ echo '<br>';
 echo '<br>';
 echo '<br>';
 echo '<br>';
+
+echo "ARRAY SLICE------------------------------";
+
+echo '<br>';
+echo '<br>';
+
+
+$paises = ["Brasil", "Alemanha","india","china","EUA"];
+
+// => INGLES: SLICE = fatiar
+// => INGLES: SPLICE = emenda
+
+
+// ? o slice recebe o array, primeiro é onde vai começar, segundo é até onde ele vai ir, terceira é booleano se vai manter os indices
+// ? nao modifica o array, retorna os valores novos
+var_dump( array_slice($paises,1,3 ) );
+echo '<br>';
+echo '<br>';
+
+echo "ARRAY SPLICE ------------------------------";
+
+// ?? array splice modifica o array, é passado primeiro o array, segundo odne começa, terceiro ate onde vai, e quarto um array para substituir dentro do array principal na posicao do segundo parametro
+var_dump(array_splice($paises,2,1,["italia","franca"]));
+var_dump($paises);
+
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
